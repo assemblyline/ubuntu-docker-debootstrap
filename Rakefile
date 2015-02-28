@@ -3,7 +3,7 @@ task :build_debootstrap_env do
 end
 
 task build: [:build_debootstrap_env] do
-  sh "docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged debootstrap-env"
+  sh "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --privileged debootstrap-env"
 end
 
 task :cleanup do
